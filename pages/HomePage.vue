@@ -1,12 +1,13 @@
 <template>
-  <HomePage />
+  <Header />
 </template>
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import HomePage from "./HomePage.vue";
+import Header from "~/components/Header.vue";
+
 export default defineComponent({
-  name: "IndexPage",
-  components: {HomePage},
+  setup() {},
+  components: { Header },
 });
 </script>

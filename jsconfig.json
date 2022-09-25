@@ -1,12 +1,41 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": false,
+    "noImplicitThis": true,
+    "noEmit": true,
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"],
-      "~~/*": ["./*"],
-      "@@/*": ["./*"]
-    }
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "types": [
+      "reflect-metadata",
+      "node",
+      "@pinia/nuxt",
+      "@nuxt/types",
+      "cookie-universal-nuxt",
+      "nuxt-i18n",
+      "@nuxt/image",
+      "jest",
+      "@types/slick-carousel"
+    ],
+    "typeRoots": ["../../node_modules/@types", "./node_modules/@types"],
+    "resolveJsonModule": true,
+    "rootDir": "./",
+    "declaration": true,
+    "declarationDir": "./types",
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  "exclude": [
+    "tests/e2e/**",
+    "**/*.spec.ts"
+  ]
 }
