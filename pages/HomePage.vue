@@ -1,13 +1,13 @@
 <template>
-  <Header />
+  <HeaderCopy />
 </template>
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import Header from "~/components/Header.vue";
+import HeaderCopy from "~/components/Header_copy.vue";
 
 export default defineComponent({
   setup() {},
-  components: { Header },
+  components: { HeaderCopy },
 });
 </script>

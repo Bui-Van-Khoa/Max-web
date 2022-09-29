@@ -20,7 +20,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "element-ui/lib/theme-chalk/index.css",
-    'element-ui/lib/theme-chalk/display.css',
+    "element-ui/lib/theme-chalk/display.css",
+    "@/assets/css/main.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,21 +34,50 @@ export default {
   buildModules: [
     "@nuxtjs/composition-api/module",
     "nuxt-element-ui",
-    '@nuxtjs/fontawesome',
+    "@nuxtjs/fontawesome",
+    "@nuxt/postcss8",
+    "@nuxtjs/apollo",
   ],
   fontawesome: {
-    component: 'fa',
+    component: "fa",
     suffix: false,
     icons: {
       solid: true,
-      brands:true
+      brands: true,
+    },
+  },
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://peaceful-fowl-85.hasura.app/v1/graphql',
+        httpLinkOptions: {
+          headers: {
+             'x-hasura-admin-secret': 'MdHt5uV7M0inliT5zoUtynbWD5dKobgxxO7CsCO24vB25zv7XxNNYbTQw3N31592',
+           
+          }
+        }
+      }
     }
   },
 
+  
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-element-ui"],
+  modules: [
+    "nuxt-element-ui",
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
+    "@nuxtjs/dotenv",
+    // "@nuxtjs/apollo",
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-  
+  build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
 };
