@@ -1,7 +1,8 @@
 {
   "name": "max-web",
   "version": "1.0.0",
-  "private": true,
+  "description": "## Build Setup",
+  "main": "nuxt.config.js",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -16,15 +17,12 @@
     "@nuxtjs/composition-api": "^0.33.1",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "@vue/apollo-composable": "^4.0.0-alpha.19",
     "apollo-cache-inmemory": "^1.6.6",
-    "apollo-server-express": "^3.10.2",
     "core-js": "^3.19.3",
     "element-ui": "^2.15.10",
     "graphql-tag": "^2.12.6",
     "nuxt": "^2.15.8",
     "nuxt-element-ui": "^1.0.10",
-    "subscriptions-transport-ws": "^0.9.19",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
@@ -39,5 +37,16 @@
     "sass": "^1.55.0",
     "sass-loader": "^10.3.1",
     "tailwindcss": "^3.1.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bui-Van-Khoa/Max-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bui-Van-Khoa/Max-web/issues"
+  },
+  "homepage": "https://github.com/Bui-Van-Khoa/Max-web#readme"
 }

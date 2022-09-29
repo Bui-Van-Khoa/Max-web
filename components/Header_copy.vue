@@ -95,13 +95,10 @@
         </div>
       </div>
     </div>
-    <div>{{ Max_web_menu }}</div>
   </div>
 </template>
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import { useQuery, useResult } from "@vue/apollo-composable/dist";
-import { GET_USERS } from '@/graphql/types';
 import gql from "graphql-tag";
 
 export default defineComponent({
@@ -137,15 +134,13 @@ export default defineComponent({
       },
     ];
 
-    const { result, loading, error } = useQuery(GET_USERS);
     
-    const users = useResult(result, null, data => data.users);
 
     const openSidebar = () => {
       document.getElementById("sidebar").classList.toggle("active");
     };
 
-    return { listMenu, openSidebar, users, loading, error };
+    return { listMenu, openSidebar};
   },
 });
 </script>
