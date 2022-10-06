@@ -7,7 +7,7 @@
       <p class="text-center text-2xl text-slate-500 pb-12">
         CUNG CẤP GIẢI PHÁP BẤT ĐỘNG SẢN TOÀN DIỆN CHO KHÁCH HÀNG
       </p>
-      <!-- <client-only>
+      <client-only>
         <carousel
           :nav="false"
           :loop="true"
@@ -21,11 +21,9 @@
         >
           <div v-for="(item, index) in Max_web_service">
             <div class="hover-change-image">
+              <img :src="require('@/assets/images/service/icon1-white.png')" />
               <img
-                :src="require(`@/assets/images/service/${item.src_hover}`)"
-              />
-              <img
-                :src="require(`@/assets/images/service/${item.src}`)"
+                :src="require('@/assets/images/service/1.png')"
                 class="hidden-img"
               />
             </div>
@@ -37,7 +35,7 @@
             </p>
           </div>
         </carousel>
-      </client-only> -->
+      </client-only>
       <el-button class="text-lg mt-10"
         >TÌM HIỂU THÊM VỀ NHAN BINH LAND</el-button
       >
