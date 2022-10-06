@@ -25,7 +25,10 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: "~/plugins/owlcarouse", mode: "client", ssr: false },
+    { src: "~/plugins/vueflickity.js", ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -36,7 +39,6 @@ export default {
     "nuxt-element-ui",
     "@nuxtjs/fontawesome",
     "@nuxt/postcss8",
-    "@nuxtjs/apollo",
   ],
   fontawesome: {
     component: "fa",
@@ -47,28 +49,38 @@ export default {
     },
   },
 
+  // apollo: {
+  //   clientConfigs: {
+  //     default: {
+  //       httpEndpoint: "https://peaceful-fowl-85.hasura.app/v1/graphql",
+  //       httpLinkOptions: {
+  //         headers: {
+  //           "x-hasura-admin-secret":
+  //             "MdHt5uV7M0inliT5zoUtynbWD5dKobgxxO7CsCO24vB25zv7XxNNYbTQw3N31592",
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
   apollo: {
+    cookieAttributes: {
+      expires: 7,
+    },
+    includeNodeModules: true,
+    authenticationType: "Bearer",
+    errorHandler: "~/plugins/apollo-error-handler.js",
     clientConfigs: {
-      default: {
-        httpEndpoint: 'https://peaceful-fowl-85.hasura.app/v1/graphql',
-        httpLinkOptions: {
-          headers: {
-             'x-hasura-admin-secret': 'MdHt5uV7M0inliT5zoUtynbWD5dKobgxxO7CsCO24vB25zv7XxNNYbTQw3N31592',
-           
-          }
-        }
-      }
-    }
+      default: "~/apollo/clientConfig.js",
+    },
   },
 
-  
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "nuxt-element-ui",
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
-    // "@nuxtjs/apollo",
+    "@nuxtjs/apollo",
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

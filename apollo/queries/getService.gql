@@ -1,0 +1,9 @@
+query getMenu {
+  Max_web_service {
+    description
+    id
+    src
+    src_hover
+    title
+  }
+}
