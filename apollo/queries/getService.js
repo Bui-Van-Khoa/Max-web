@@ -1,4 +1,6 @@
-query getMenu {
+import gql from "graphql-tag";
+export default gql`
+ query getSerive {
   Max_web_service {
     description
     id
@@ -7,3 +9,5 @@ query getMenu {
     title
   }
 }
+
+`;

@@ -5,11 +5,17 @@
         <div class="header-infor">
           <div class="information">
             <div class="phone">
-              <p class="icon"><fa :icon="['fas', 'phone']" /></p>
+              <font-awesome-icon
+                icon="fa-solid fa-phone"
+                style="margin-top: 2px"
+              />
               <p class="number">0912.49.8558</p>
             </div>
             <div class="address">
-              <p class="icon"><fa :icon="['fas', 'envelope']" /></p>
+              <font-awesome-icon
+                icon="fa-solid fa-envelope"
+                style="margin-top: 2px"
+              />
               <p class="">pkdnhanbinh@gmail.com</p>
             </div>
           </div>
@@ -76,7 +82,7 @@
       <div class="grid grid-cols-6">
         <div class="col-span-1 relative">
           <button class="pt-9 pl-9" @click="drawer = true">
-            <fa :icon="['fas', 'bars']" />
+            <!-- <fa :icon="['fas', 'bars']" /> -->
           </button>
         </div>
         <div class="col-span-5 flex justify-center">
@@ -108,40 +114,30 @@
 </template>
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
-import menu from "~/apollo/queries/getMenu";
+import { useUiState } from "~/store/useUiState";
+import getMenu from "~/apollo/queries/getMenu";
 
 export default defineComponent({
   setup() {
-    const drawer = ref(false);
+    const counter = useUiState();
 
-    return { drawer };
+    console.log("todoStore", counter.$state.isSideBarOpen);
+
+    return {};
   },
 
   apollo: {
     Max_web_menu: {
       prefetch: true,
-      query: menu,
+      query: getMenu,
     },
   },
 });
 </script>
 
 <style lang="scss">
-@media screen and (min-width: 850px) {
-  .mobile {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .header,
-  .header_megamenu {
-    display: none;
-  }
-}
-
 $tablet: "only screen and (min-width: 850px) and (max-width: 1023px)";
-$large: "only screen and (min-width: 1024px) and (max-width: 1239px)";
+$large: "only screen and (min-width: 1024px) and (max-width: 1239kpx)";
 $mobile: "only screen and (min-width: 849px)";
 @mixin responsive_tablet() {
   @media #{$tablet} {
@@ -188,12 +184,14 @@ $mobile: "only screen and (min-width: 849px)";
           display: flex;
           justify-content: space-between;
           margin-right: 20px;
+          column-gap: 8px;
           .number {
             border-right: 1px solid white;
             padding-right: 20px;
           }
           .icon {
             padding-right: 10px;
+            margin-top: 2px;
           }
         }
       }

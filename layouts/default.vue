@@ -1,36 +1,48 @@
 <template>
-  <div class="root">
+  <div>
     <Header />
-    <Carousel />
-    <div class="body">
-      <Content />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+    <SideBarMenu />
+    <div id="layout">
+      <nuxt :key="route.fullPath" />
     </div>
+    <PhoneAnimation />
   </div>
 </template>
-
-<script>
-import { defineComponent } from "@nuxtjs/composition-api";
+<script lang="ts">
+import { defineComponent, useRoute } from "@nuxtjs/composition-api";
 import Header from "~/components/Header.vue";
-import Content from "~/components/BodyContent/HomePage/Content.vue";
-import Carousel from "~/components/Carousel.vue";
+import SideBarMenu from "../components/SideBarMenu.vue";
+import PhoneAnimation from "~/components/PhoneAnimation.vue";
 
 export default defineComponent({
-  name: "IndexPage",
-  components: { Header, Content, Carousel },
+  name: "DefaultLayout",
+
+  components: { Header, SideBarMenu, PhoneAnimation },
+
+  setup() {
+    const route = useRoute();
+    // console.log("route", route);
+    return { route };
+  },
 });
 </script>
 
 <style lang="scss">
+@media screen and (min-width: 850px) {
+  .mobile,
+  .newsMobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .header,
+  .header_megamenu,
+  .news__item {
+    display: none;
+  }
+}
+
 $tablet: "only screen and (min-width: 850px) and (max-width: 1023px)";
 $large: "only screen and (min-width: 1024px) and (max-width: 1239px)";
 $mobile: "only screen and (min-width: 849px)";
@@ -64,7 +76,11 @@ $mobile: "only screen and (min-width: 849px)";
       margin-top: 65px;
       .information,
       .project__items,
-      .open-project__item {
+      .open-project__item,
+      .video__item,
+      .news,
+      .customer__content,
+      .mailbox__content {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
@@ -74,7 +90,11 @@ $mobile: "only screen and (min-width: 849px)";
   @include responsive_tablet {
     .information,
     .project__items,
-    .open-project__item {
+    .open-project__item,
+    .video__item,
+    .news,
+    .customer__content,
+    .mailbox__content {
       width: 850px;
     }
   }
@@ -82,7 +102,11 @@ $mobile: "only screen and (min-width: 849px)";
   @include responsive_large {
     .information,
     .project__items,
-    .open-project__item {
+    .open-project__item,
+    .video__item,
+    .news,
+    .customer__content,
+    .mailbox__content {
       width: 984px;
     }
   }

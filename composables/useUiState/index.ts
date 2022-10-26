@@ -2,13 +2,13 @@ import { reactive, computed } from "@nuxtjs/composition-api";
 import {
   StateInterface,
   UseUiStateInterface,
-} from "~/composables/useUIState/useUiState";
+} from "./useUiState";
 
 const state = reactive<StateInterface>({
   isMobileMenuOpen: false,
 });
 
-export function useStateUI(): UseUiStateInterface {
+export function useUiState(): UseUiStateInterface {
   const toggleMobileMenu = () => {
     state.isMobileMenuOpen = !state.isMobileMenuOpen;
   };
