@@ -6,6 +6,7 @@
       <nuxt :key="route.fullPath" />
     </div>
     <PhoneAnimation />
+    <Footer />
   </div>
 </template>
 <script lang="ts">
@@ -13,11 +14,12 @@ import { defineComponent, useRoute } from "@nuxtjs/composition-api";
 import Header from "~/components/Header.vue";
 import SideBarMenu from "../components/SideBarMenu.vue";
 import PhoneAnimation from "~/components/PhoneAnimation.vue";
+import Footer from "~/components/Footer.vue";
 
 export default defineComponent({
   name: "DefaultLayout",
 
-  components: { Header, SideBarMenu, PhoneAnimation },
+  components: { Header, SideBarMenu, PhoneAnimation, Footer },
 
   setup() {
     const route = useRoute();

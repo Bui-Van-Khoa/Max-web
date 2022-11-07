@@ -1,9 +1,10 @@
 <template>
   <div class="root">
     <!-- <Header /> -->
-    <Carousel />
+    <!-- <Carousel /> -->
     <div class="body">
-      <ContentHome />
+      khoa
+      <!-- <ContentHome /> -->
       <br />
       <br />
       <br />
@@ -29,4 +30,3 @@ export default defineComponent({
   components: { Header, ContentHome, Carousel },
 });
 </script>
-

@@ -1,5 +1,5 @@
 <template lang="">
-  <div id="homepage-content">
+  <!-- <div id="homepage-content">
     <section class="information">
       <p class="text-center text-emerald-700 text-4xl uppercase pb-8 font-bold">
         NHAN BINH LAND
@@ -79,7 +79,7 @@
         <p class="text-center text-white text-4xl uppercase py-8">
           BĐS MỞ BÁN TẠI NHAN BINH LAND
         </p>
-        <no-ssr>
+        <client-only>
           <Flickity
             pageDots:false
             :options="flickityOptions"
@@ -135,7 +135,7 @@
               </div>
             </div>
           </Flickity>
-        </no-ssr>
+        </client-only>
       </div>
     </section>
 
@@ -143,7 +143,8 @@
       <p class="text-center text-emerald-700 text-4xl uppercase font-bold py-8">
         NHAN BINH LAND TV
       </p>
-      <div class="video__item grid grid-cols-4 gap-4 bg-white">
+
+      <div class="video__item bg-white">
         <div class="col-span-3">
           <video-player :src="urlInitial" :autoplay="true" />
         </div>
@@ -186,7 +187,7 @@
       </section>
 
       <section class="newsMobile">
-        <no-ssr>
+        <client-only>
           <Flickity :options="flickityOptions">
             <div v-for="item in news" class="newsMobile__cell">
               <img
@@ -204,7 +205,7 @@
               </div>
             </div>
           </Flickity>
-        </no-ssr>
+        </client-only>
       </section>
       <el-button
         class="text-lg text-white w-fit flex m-auto"
@@ -221,7 +222,7 @@
         <p class="text-center text-xl text-slate-500 pb-10">
           Sự hài lòng của khách hàng chính là thành công lớn nhất của chúng tôi
         </p>
-        <no-ssr>
+        <client-only>
           <Flickity :options="flickityOptions">
             <div class="slide flex space-x-5 px-4 py-4" v-for="item in 4">
               <div class="col-span-2">
@@ -241,7 +242,7 @@
               </div>
             </div>
           </Flickity>
-        </no-ssr>
+        </client-only>
       </div>
     </section>
 
@@ -258,7 +259,7 @@
           giấc mơ sơ hữu BĐS và tối ưu hiệu quả đầu tư.
         </p>
 
-        <div class="grid grid-cols-8 gap-4 mt-12">
+        <div class="grid grid-cols-8 gap-4 mt-12 pb-10">
           <div class="col-span-5">
             <p
               class="bg-green-700 text-center text-white py-2 font-medium"
@@ -305,12 +306,12 @@
             >
               ĐĂNG KÝ TƯ VẤN
             </p>
-            <div class="form relative">
+            <div class="form">
               <el-form
                 ref="form"
                 :model="form"
-                :inline="true"
                 class="pl-4 py-2"
+                label-position="top"
               >
                 <el-form-item label="Họ tên của bạn">
                   <el-input
@@ -342,18 +343,42 @@
                     </el-option>
                   </el-select>
                 </el-form-item>
+                <el-form-item>
+                  <el-button
+                    class="bg-amber-500 text-lg border-none"
+                    type="primary"
+                    >Hoàn tất</el-button
+                  >
+                </el-form-item>
               </el-form>
-              <el-button
-                class="absolute right-0 left-0 ml-auto mr-auto bg-amber-500 text-lg border-none"
-                type="primary"
-                >Hoàn tất</el-button
-              >
             </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
+
+    <section class="partner">
+      <p class="text-center text-emerald-700 text-4xl uppercase font-bold py-8">
+        ĐỐI TÁC CỦA NHAN BINH LAND
+      </p>
+      <div>
+        <client-only>
+          <Flickity :options="flickityOptions1">
+            <div
+              v-for="item in listPartner"
+              :key="item.id"
+              class="partner__cell"
+            >
+              <div class="px-2">
+                <img :src="item.url" alt="" class="m-auto" />
+              </div>
+            </div>
+          </Flickity>
+        </client-only>
+      </div>
+    </section>
+  </div> -->
+  <div>khoa</div>
 </template>
 <script>
 import {
@@ -364,12 +389,13 @@ import {
 } from "@nuxtjs/composition-api";
 import VideoPlayer from "nuxt-video-player";
 import getMenu from "~/apollo/queries/getService";
+import FlickityCarousel from "~/components/FlickityCarousel.vue";
 
 require("nuxt-video-player/src/assets/css/main.css");
 
 export default defineComponent({
   name: "ContentHome",
-  components: { VideoPlayer },
+  components: { VideoPlayer, FlickityCarousel },
   setup() {
     const flickityOptions = {
       prevNextButtons: false,
@@ -377,6 +403,15 @@ export default defineComponent({
       wrapAround: true,
       cellAlign: "left",
       draggable: true,
+    };
+
+    const flickityOptions1 = {
+      prevNextButtons: false,
+      pageDots: false,
+      wrapAround: true,
+      cellAlign: "left",
+      draggable: true,
+      autoPlay: true,
     };
 
     const urlInitial = ref("https://www.youtube.com/watch?v=G2z1JJ78DK0");
@@ -460,6 +495,70 @@ export default defineComponent({
       },
     ];
 
+    const listPartner = [
+      {
+        id: 1,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 2,
+        name: "mikgroup",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-002.png",
+      },
+      {
+        id: 3,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-003.jpg",
+      },
+      {
+        id: 4,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/cong-ty-cp-beegreen.png",
+      },
+      {
+        id: 5,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-005.jpg",
+      },
+      {
+        id: 6,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-006.png",
+      },
+      {
+        id: 7,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-007.jpg",
+      },
+      {
+        id: 8,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-008.jpg",
+      },
+      {
+        id: 9,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-009.png",
+      },
+      {
+        id: 10,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-10.png",
+      },
+      {
+        id: 11,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-11.png",
+      },
+      {
+        id: 12,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-12.png",
+      },
+      {
+        id: 13,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-13.png",
+      },
+      {
+        id: 14,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-14.png",
+      },
+      {
+        id: 15,
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-15.png",
+      },
+    ];
+
     const form = {
       name: "",
     };
@@ -478,10 +577,6 @@ export default defineComponent({
 
     watch(urlInitial, () => {});
 
-    // onMounted(() => {
-    //   this.$tawkMessenger.toggle();
-    // });
-
     return {
       flickityOptions,
       changeUrl,
@@ -492,6 +587,8 @@ export default defineComponent({
       adviseList,
       form,
       options,
+      flickityOptions1,
+      listPartner,
     };
   },
 
@@ -614,8 +711,16 @@ export default defineComponent({
   }
 
   .video {
-    background-color: rgb(244, 244, 244);
+    background-color: white;
     padding-bottom: 60px;
+
+    &__item {
+      @media screen and (min-width: 850px) {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(auto, 1fr));
+        gap: 12px;
+      }
+    }
   }
 
   .news {
@@ -681,13 +786,23 @@ export default defineComponent({
 
   .mailbox {
     background-color: rgb(244, 244, 244);
-    height: 775px;
     &__content {
       .form_register {
         .el-form-item__label {
           display: flex;
           color: #edab21;
         }
+      }
+    }
+  }
+
+  .partner {
+    &__cell {
+      @media screen and (min-width: 980px) {
+        width: 12.5%;
+      }
+      @media screen and (max-width: 979px) {
+        width: 25%;
       }
     }
   }

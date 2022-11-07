@@ -81,8 +81,8 @@
     <div class="mobile">
       <div class="grid grid-cols-6">
         <div class="col-span-1 relative">
-          <button class="pt-9 pl-9" @click="drawer = true">
-            <!-- <fa :icon="['fas', 'bars']" /> -->
+          <button class="pt-9 pl-9" @click="toggleSideBar">
+            <font-awesome-icon icon="fa-solid fa-bars" />
           </button>
         </div>
         <div class="col-span-5 flex justify-center">
@@ -90,14 +90,14 @@
         </div>
       </div>
 
-      <!-- <div class="sidebar" id="sidebar">
+      <div class="sidebar" id="sidebar">
         <el-drawer
-          :visible.sync="drawer"
+          :visible.sync="uiState.$state.isSideBarOpen"
           :with-header="false"
           direction="ltr"
           :show-close="true"
         >
-          <div class="flex justify-end p-4" @click="drawer = false">
+          <div class="flex justify-end p-4" @click="toggleSideBar">
             <i class="el-icon-close"></i>
           </div>
           <div class="w-full">
@@ -108,7 +108,7 @@
             </el-menu>
           </div>
         </el-drawer>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -119,11 +119,15 @@ import getMenu from "~/apollo/queries/getMenu";
 
 export default defineComponent({
   setup() {
-    const counter = useUiState();
+    const uiState = useUiState();
 
-    console.log("todoStore", counter.$state.isSideBarOpen);
+    const isSideBarOpen = uiState.$state.isSideBarOpen;
 
-    return {};
+    const toggleSideBar = () => {
+      uiState.$state.isSideBarOpen = !uiState.$state.isSideBarOpen;
+    };
+
+    return { isSideBarOpen, uiState, toggleSideBar };
   },
 
   apollo: {
@@ -137,7 +141,7 @@ export default defineComponent({
 
 <style lang="scss">
 $tablet: "only screen and (min-width: 850px) and (max-width: 1023px)";
-$large: "only screen and (min-width: 1024px) and (max-width: 1239kpx)";
+$large: "only screen and (min-width: 1024px) and (max-width: 1239px)";
 $mobile: "only screen and (min-width: 849px)";
 @mixin responsive_tablet() {
   @media #{$tablet} {
@@ -178,7 +182,7 @@ $mobile: "only screen and (min-width: 849px)";
       padding: 10px 0px;
       .information {
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         .phone,
         .address {
           display: flex;
@@ -201,6 +205,7 @@ $mobile: "only screen and (min-width: 849px)";
         grid-auto-flow: column;
         grid-column-gap: 10px;
         align-items: center;
+        min-width: 260px;
       }
     }
 

@@ -72,12 +72,12 @@ export default {
     },
   },
 
-  router: {
-    prefetchLinks: false,
-    extendRoutes(routes) {
-      getRoutes().forEach((route) => routes.unshift(route));
-    },
-  },
+  // router: {
+  //   prefetchLinks: false,
+  //   extendRoutes(routes) {
+  //     getRoutes().forEach((route) => routes.unshift(route));
+  //   },
+  // },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "nuxt-element-ui",

@@ -1,20 +1,26 @@
 <template>
-  <div id="phoneAnimation" class="ring-orange-900">
-    <div class="wrapper flex">
+  <div id="phoneAnimation" class="flex">
+    <div class="wrapper flex z-40">
       <div class="ring">
         <div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show">
           <div class="coccoc-alo-ph-circle"></div>
           <div class="coccoc-alo-ph-circle-fill"></div>
-            <div class="coccoc-alo-ph-img-circle">
-              <p class="text-white mt-1.5">
-                <font-awesome-icon
-                  icon="fa-solid fa-phone fa-2xl"
-                  style="height: 30px; width: 42px"
-                />
-              </p>
-            </div>
+          <div class="coccoc-alo-ph-img-circle">
+            <p class="text-white mt-1.5">
+              <font-awesome-icon
+                icon="fa-solid fa-phone fa-2xl"
+                style="height: 30px; width: 42px"
+              />
+            </p>
+          </div>
         </div>
       </div>
+    </div>
+    <div
+      class="phone bg-blue-600 h-fit text-xl -ml-12 px-6 py-1 rounded-md text-white z-30"
+      style="margin-top: 75px"
+    >
+      0988173269
     </div>
   </div>
 </template>
@@ -30,8 +36,8 @@ export default defineComponent({
 <style lang="scss">
 #phoneAnimation {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  bottom: -12px;
+  left: -38px;
 
   .ring {
     box-shadow: none;
@@ -77,6 +83,7 @@ export default defineComponent({
 
   .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-circle-fill {
     background-color: rgba(0, 175, 242, 0.5);
+
     opacity: 0.75 !important;
   }
 
@@ -123,11 +130,14 @@ export default defineComponent({
   }
 
   .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-img-circle {
-    background-color: #00aff2;
+    // background-color: #00aff2;
+    background-color: red;
   }
 
   .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-circle {
+    // border-color: #00aff2;
     border-color: #00aff2;
+
     opacity: 0.5;
   }
 
@@ -362,6 +372,12 @@ export default defineComponent({
     }
     100% {
       transform: rotate(0) scale(1) skew(1deg);
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .phone {
+      display: none;
     }
   }
 }
