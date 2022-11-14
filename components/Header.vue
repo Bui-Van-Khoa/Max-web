@@ -64,7 +64,7 @@
                   }}</el-button>
                 </el-popover>
               </div>
-              <div v-else>{{ item.name }}</div>
+              <div v-else class="whitespace-nowrap">{{ item.name }}</div>
             </div>
           </div>
           <div class="row-span-1 col-span-9 relative">
@@ -182,7 +182,7 @@ $mobile: "only screen and (min-width: 849px)";
       padding: 10px 0px;
       .information {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         .phone,
         .address {
           display: flex;

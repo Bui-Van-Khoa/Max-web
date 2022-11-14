@@ -1,5 +1,5 @@
 <template lang="">
-  <!-- <div id="homepage-content">
+  <div id="homepage-content">
     <section class="information">
       <p class="text-center text-emerald-700 text-4xl uppercase pb-8 font-bold">
         NHAN BINH LAND
@@ -333,7 +333,7 @@
                 </el-form-item>
 
                 <el-form-item label=" Bạn muốn mua dự án ở khu vực nào?">
-                  <el-select v-model="value" placeholder="Chọn khu vực">
+                  <el-select v-model="valueSelect" placeholder="Chọn khu vực">
                     <el-option
                       v-for="item in options"
                       :key="item.value"
@@ -377,8 +377,7 @@
         </client-only>
       </div>
     </section>
-  </div> -->
-  <div>khoa</div>
+  </div>
 </template>
 <script>
 import {
@@ -397,6 +396,7 @@ export default defineComponent({
   name: "ContentHome",
   components: { VideoPlayer, FlickityCarousel },
   setup() {
+    const valueSelect = ref("");
     const flickityOptions = {
       prevNextButtons: false,
       pageDots: true,
@@ -499,6 +499,7 @@ export default defineComponent({
       {
         id: 1,
         url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+        // url: "~/assets/images/home-001.png",
       },
       {
         id: 2,
@@ -589,6 +590,7 @@ export default defineComponent({
       options,
       flickityOptions1,
       listPartner,
+      valueSelect,
     };
   },
 
@@ -604,6 +606,7 @@ export default defineComponent({
 <style lang="scss">
 #homepage-content {
   .information {
+    margin-top: 30px;
     .el-button {
       background-color: #047058;
       color: white;
@@ -797,6 +800,7 @@ export default defineComponent({
   }
 
   .partner {
+    padding-bottom: 40px;
     &__cell {
       @media screen and (min-width: 980px) {
         width: 12.5%;

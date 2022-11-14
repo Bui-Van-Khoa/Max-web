@@ -1,20 +1,8 @@
 <template>
   <div class="root">
-    <!-- <Header /> -->
-    <!-- <Carousel /> -->
     <div class="body">
-      khoa
-      <!-- <ContentHome /> -->
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <Carousel />
+      <ContentHome />
     </div>
   </div>
 </template>
@@ -27,6 +15,11 @@ import Carousel from "~/components/Carousel.vue";
 
 export default defineComponent({
   name: "HomePage",
-  components: { Header, ContentHome, Carousel },
+  components: {
+    Header,
+    ContentHome,
+    Carousel,
+    Footer: () => import(/* webpackPrefetch: true */ "~/components/Footer.vue"),
+  },
 });
 </script>

@@ -14,12 +14,18 @@ import { defineComponent, useRoute } from "@nuxtjs/composition-api";
 import Header from "~/components/Header.vue";
 import SideBarMenu from "../components/SideBarMenu.vue";
 import PhoneAnimation from "~/components/PhoneAnimation.vue";
-import Footer from "~/components/Footer.vue";
+// import Footer from "~/components/Footer.vue";
 
 export default defineComponent({
   name: "DefaultLayout",
 
-  components: { Header, SideBarMenu, PhoneAnimation, Footer },
+  components: {
+    Header,
+    SideBarMenu,
+    PhoneAnimation,
+    // Footer,
+    Footer: () => import(/* webpackPrefetch: true */ "~/components/Footer.vue"),
+  },
 
   setup() {
     const route = useRoute();
@@ -69,20 +75,19 @@ $mobile: "only screen and (min-width: 849px)";
   .root {
     position: relative;
     .body {
-      position: absolute;
       left: 0;
       right: 0;
       margin-left: auto;
       margin-right: auto;
       margin: 0 auto;
-      margin-top: 65px;
       .information,
       .project__items,
       .open-project__item,
       .video__item,
       .news,
       .customer__content,
-      .mailbox__content {
+      .mailbox__content,
+      .partner {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
@@ -96,7 +101,8 @@ $mobile: "only screen and (min-width: 849px)";
     .video__item,
     .news,
     .customer__content,
-    .mailbox__content {
+    .mailbox__content,
+    .partner {
       width: 850px;
     }
   }
@@ -108,7 +114,8 @@ $mobile: "only screen and (min-width: 849px)";
     .video__item,
     .news,
     .customer__content,
-    .mailbox__content {
+    .mailbox__content,
+    .partner {
       width: 984px;
     }
   }
