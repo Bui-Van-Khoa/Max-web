@@ -22,10 +22,10 @@
           <div v-for="(item, index) in Max_web_service">
             <div class="hover-change-image">
               <img
-                :src="require(`@/assets/images/service/${item.src_hover}`)"
+                :src="require(`@/static/images/service/${item.src_hover}`)"
               />
               <img
-                :src="require(`@/assets/images/service/${item.src}`)"
+                :src="require(`@/static/images/service/${item.src}`)"
                 class="hidden-img"
               />
             </div>
