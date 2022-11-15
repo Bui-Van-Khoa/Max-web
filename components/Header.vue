@@ -81,7 +81,7 @@
     <div class="mobile">
       <div class="grid grid-cols-6">
         <div class="col-span-1 relative">
-          <button class="pt-9 pl-9" @click="toggleSideBar">
+          <button class="mt-9 ml-9" @click="toggleSideBar">
             <font-awesome-icon icon="fa-solid fa-bars" />
           </button>
         </div>
@@ -127,7 +127,15 @@ export default defineComponent({
       uiState.$state.isSideBarOpen = !uiState.$state.isSideBarOpen;
     };
 
-    const Max_web_menu = [{ name: "abc", path: "/" }];
+    const Max_web_menu = [
+      { name: "Trang chủ", path: "/" },
+      { name: "Giới Thiệu", path: "/" },
+      { name: "Dự án", path: "/" },
+      { name: "Tin tức", path: "/" },
+      { name: "Kinh nghiệm", path: "/" },
+      { name: "Tuyển dụng", path: "/" },
+      { name: "Liên hệ", path: "/" },
+    ];
 
     return { isSideBarOpen, uiState, toggleSideBar, Max_web_menu };
   },

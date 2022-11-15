@@ -580,11 +580,49 @@ export default defineComponent({
 
     const Max_web_service = [
       {
-        description: "abc",
         id: 1,
-        src: "abc",
-        src_hover: "abc",
-        title: "ahihi",
+        title: "Sản phẩm Nhanbinhland",
+        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
+        src_hover:
+          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        description:
+          "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
+      },
+      {
+        id: 2,
+        title: "Sản phẩm Nhanbinhland",
+        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
+        src_hover:
+          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        description:
+          "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
+      },
+      {
+        id: 3,
+        title: "Sản phẩm Nhanbinhland",
+        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
+        src_hover:
+          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        description:
+          "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
+      },
+      {
+        id: 4,
+        title: "Sản phẩm Nhanbinhland",
+        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
+        src_hover:
+          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        description:
+          "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
+      },
+      {
+        id: 5,
+        title: "Sản phẩm Nhanbinhland",
+        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
+        src_hover:
+          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        description:
+          "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
       },
     ];
 

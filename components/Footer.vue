@@ -60,7 +60,7 @@
           chúng tôi sẽ gửi cập nhật những tin tức, CSBH ưu đãi của Nhan Binh
           Land - Tư vấn giải pháp Bất Động Sản toàn diện tới quý khách.
         </p>
-        <div style="margin-top: 15px">
+        <div style="margin-top: 15px" class="w-1/2 email">
           <el-input placeholder="Email của bạn" class="input-with-select">
             <el-button slot="append">Gửi</el-button>
           </el-input>
@@ -118,6 +118,16 @@ $mobile: "only screen and (min-width: 849px)";
     }
     .item3 {
       grid-column: span 4 / span 4;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer__container {
+      padding: 27px 13px 90px 30px;
+      display: block;
+      .item3 .email {
+        margin-left: auto;
+      }
     }
   }
 
