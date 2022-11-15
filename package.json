@@ -59,7 +59,4 @@
     "url": "https://github.com/Bui-Van-Khoa/Max-web/issues"
   },
   "homepage": "https://github.com/Bui-Van-Khoa/Max-web#readme",
-  "engines": {
-    "node": "16.16.0"
-  }
 }
