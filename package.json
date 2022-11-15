@@ -60,7 +60,6 @@
   },
   "homepage": "https://github.com/Bui-Van-Khoa/Max-web#readme",
   "engines": {
-    "node": "16.x",
-    "npm": "8.5.5"
+    "node": "16.16.0"
   }
 }
