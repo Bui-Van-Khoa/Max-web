@@ -19,7 +19,7 @@ export default defineComponent({
     Header,
     ContentHome,
     Carousel,
-    Footer: () => import(/* webpackPrefetch: true */ "~/components/Footer.vue"),
+    Footer: () => import("~/components/Footer.vue"),
   },
 });
 </script>
