@@ -21,8 +21,13 @@
         >
           <div v-for="(item, index) in Max_web_service">
             <div class="hover-change-image">
-              <img :src="`${item.src_hover}`" />
-              <img :src="`${item.src}`" class="hidden-img" />
+              <img
+                :src="require(`@/assets/images/service/${item.src_hover}`)"
+              />
+              <img
+                :src="require(`@/assets/images/service/${item.src}`)"
+                class="hidden-img"
+              />
             </div>
             <h3 class="text-emerald-700 pb-4 pt-12 text-center font-bold">
               {{ item.title }}
@@ -370,7 +375,10 @@
               class="partner__cell"
             >
               <div class="px-2">
-                <img :src="item.url" alt="" class="m-auto" />
+                <img
+                  :src="require(`@/assets/images/partner/${item.url}`)"
+                  class="m-auto"
+                />
               </div>
             </div>
           </Flickity>
@@ -498,65 +506,63 @@ export default defineComponent({
     const listPartner = [
       {
         id: 1,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
-        // url: "~/assets/images/home-001.png",
+        url: "home-001.png",
       },
       {
         id: 2,
-        name: "mikgroup",
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-002.png",
+        url: "home-002.png",
       },
       {
         id: 3,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-003.jpg",
+        url: "home-003.jpg",
       },
       {
         id: 4,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/cong-ty-cp-beegreen.png",
+        url: "cong-ty-cp-beegreen.png",
       },
       {
         id: 5,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-005.jpg",
+        url: "home-005.jpg",
       },
       {
         id: 6,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-006.png",
+        url: "home-006.png",
       },
       {
         id: 7,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-007.jpg",
+        url: "home-007.jpg",
       },
       {
         id: 8,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-008.jpg",
+        url: "home-008.jpg",
       },
       {
         id: 9,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-009.png",
+        url: "home-009.png",
       },
       {
         id: 10,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-10.png",
+        url: "home-10.png",
       },
       {
         id: 11,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-11.png",
+        url: "home-11.png",
       },
       {
         id: 12,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-12.png",
+        url: "home-12.png",
       },
       {
         id: 13,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-13.png",
+        url: "home-13.png",
       },
       {
         id: 14,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-14.png",
+        url: "home-14.png",
       },
       {
         id: 15,
-        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-15.png",
+        url: "home-15.png",
       },
     ];
 
@@ -582,45 +588,40 @@ export default defineComponent({
       {
         id: 1,
         title: "Sản phẩm Nhanbinhland",
-        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
-        src_hover:
-          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        src: "1.png",
+        src_hover: "icon1-white.png",
         description:
           "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
       },
       {
         id: 2,
         title: "Sản phẩm Nhanbinhland",
-        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
-        src_hover:
-          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        src: "icon2.png",
+        src_hover: "icon2-white.png",
         description:
           "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
       },
       {
         id: 3,
         title: "Sản phẩm Nhanbinhland",
-        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
-        src_hover:
-          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        src: "icon3.png",
+        src_hover: "icon3-white.png",
         description:
           "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
       },
       {
         id: 4,
         title: "Sản phẩm Nhanbinhland",
-        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
-        src_hover:
-          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        src: "icon4.png",
+        src_hover: "icon4-white.png",
         description:
           "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
       },
       {
         id: 5,
         title: "Sản phẩm Nhanbinhland",
-        src: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1.png",
-        src_hover:
-          "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/icon1-white.png",
+        src: "icon5.png",
+        src_hover: "icon5-white.png",
         description:
           "Bất động sản tại Nhanbinhland được chọn lọc kỹ càng, đem đến nhiều lợi nhuận cao và phù hợp nhất đến khách hàng.",
       },
