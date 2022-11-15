@@ -578,6 +578,16 @@ export default defineComponent({
 
     watch(urlInitial, () => {});
 
+    const Max_web_service = [
+      {
+        description: "abc",
+        id: 1,
+        src: "abc",
+        src_hover: "abc",
+        title: "ahihi",
+      },
+    ];
+
     return {
       flickityOptions,
       changeUrl,
@@ -591,15 +601,16 @@ export default defineComponent({
       flickityOptions1,
       listPartner,
       valueSelect,
+      Max_web_service,
     };
   },
 
-  apollo: {
-    Max_web_service: {
-      prefetch: true,
-      query: getMenu,
-    },
-  },
+  // apollo: {
+  //   Max_web_service: {
+  //     prefetch: true,
+  //     query: getMenu,
+  //   },
+  // },
 });
 </script>
 

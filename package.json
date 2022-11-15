@@ -58,8 +58,5 @@
   "bugs": {
     "url": "https://github.com/Bui-Van-Khoa/Max-web/issues"
   },
-  "homepage": "https://github.com/Bui-Van-Khoa/Max-web#readme",
-  "engines": {
-    "node": "4.1.1"
-  }
+  "homepage": "https://github.com/Bui-Van-Khoa/Max-web#readme"
 }

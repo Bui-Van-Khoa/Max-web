@@ -115,7 +115,7 @@
 <script>
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import { useUiState } from "~/store/useUiState";
-import getMenu from "~/apollo/queries/getMenu";
+// import getMenu from "~/apollo/queries/getMenu";
 
 export default defineComponent({
   setup() {
@@ -127,15 +127,17 @@ export default defineComponent({
       uiState.$state.isSideBarOpen = !uiState.$state.isSideBarOpen;
     };
 
-    return { isSideBarOpen, uiState, toggleSideBar };
+    const Max_web_menu = [{ name: "abc", path: "/" }];
+
+    return { isSideBarOpen, uiState, toggleSideBar, Max_web_menu };
   },
 
-  apollo: {
-    Max_web_menu: {
-      prefetch: true,
-      query: getMenu,
-    },
-  },
+  // apollo: {
+  //   Max_web_menu: {
+  //     prefetch: true,
+  //     query: getMenu,
+  //   },
+  // },
 });
 </script>
 
