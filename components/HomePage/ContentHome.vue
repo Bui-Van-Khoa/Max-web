@@ -7,9 +7,8 @@
       <p class="text-center text-2xl text-slate-500 pb-12">
         CUNG CẤP GIẢI PHÁP BẤT ĐỘNG SẢN TOÀN DIỆN CHO KHÁCH HÀNG
       </p>
-      <client-only>
+      <!-- <client-only>
         <carousel
-          id="service"
           :nav="false"
           :loop="true"
           :responsive="{
@@ -36,6 +35,32 @@
             </p>
           </div>
         </carousel>
+      </client-only> -->
+
+      <client-only>
+        <Flickity :options="flickityOptions1">
+          <div
+            v-for="(item, index) in Max_web_service"
+            :key="index"
+            class="partner__cell"
+          >
+            <div class="hover-change-image">
+              <img
+                :src="require(`@/assets/images/service/${item.src_hover}`)"
+              />
+              <img
+                :src="require(`@/assets/images/service/${item.src}`)"
+                class="hidden-img"
+              />
+            </div>
+            <h3 class="text-emerald-700 pb-4 pt-12 text-center font-bold">
+              {{ item.title }}
+            </h3>
+            <p class="text-justify px-2 text-slate-500 text-sm">
+              {{ item.description }}
+            </p>
+          </div>
+        </Flickity>
       </client-only>
 
       <el-button class="text-lg mt-10"
