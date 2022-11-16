@@ -22,10 +22,10 @@
           <div v-for="(item, index) in Max_web_service">
             <div class="hover-change-image">
               <img
-                :src="require(`@/static/images/service/${item.src_hover}`)"
+                :src="require(`@/assets/images/service/${item.src_hover}`)"
               />
               <img
-                :src="require(`@/static/images/service/${item.src}`)"
+                :src="require(`@/assets/images/service/${item.src}`)"
                 class="hidden-img"
               />
             </div>
@@ -84,7 +84,7 @@
         <p class="text-center text-white text-4xl uppercase py-8">
           BĐS MỞ BÁN TẠI NHAN BINH LAND
         </p>
-        <client-only>
+        <!-- <client-only>
           <Flickity
             pageDots:false
             :options="flickityOptions"
@@ -140,7 +140,7 @@
               </div>
             </div>
           </Flickity>
-        </client-only>
+        </client-only> -->
       </div>
     </section>
 
@@ -419,7 +419,7 @@ export default defineComponent({
       wrapAround: true,
       cellAlign: "left",
       draggable: true,
-      autoPlay: true,
+      autoPlay: false,
     };
 
     const urlInitial = ref("https://www.youtube.com/watch?v=G2z1JJ78DK0");

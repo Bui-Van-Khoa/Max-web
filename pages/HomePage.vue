@@ -1,7 +1,7 @@
 <template>
   <div class="root">
+    <Carousel />
     <div class="body">
-      <Carousel />
       <ContentHome />
     </div>
   </div>
@@ -9,14 +9,12 @@
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import Header from "~/components/Header.vue";
 import ContentHome from "~/components/HomePage/ContentHome.vue";
 import Carousel from "~/components/Carousel.vue";
 
 export default defineComponent({
   name: "HomePage",
   components: {
-    Header,
     ContentHome,
     Carousel,
     Footer: () => import("~/components/Footer.vue"),
