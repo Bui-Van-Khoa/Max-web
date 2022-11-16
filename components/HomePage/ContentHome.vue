@@ -7,7 +7,7 @@
       <p class="text-center text-2xl text-slate-500 pb-12">
         CUNG CẤP GIẢI PHÁP BẤT ĐỘNG SẢN TOÀN DIỆN CHO KHÁCH HÀNG
       </p>
-      <client-only>
+      <!-- <client-only>
         <carousel
           :nav="false"
           :loop="true"
@@ -21,9 +21,11 @@
         >
           <div v-for="(item, index) in Max_web_service">
             <div class="hover-change-image">
-              <img :src="require('@/assets/images/service/icon1-white.png')" />
               <img
-                :src="require('@/assets/images/service/1.png')"
+                :src="require('@/assets/images/service/icon1-white.png')"
+              />
+              <img
+                src="require('@/assets/images/service/1.png')"
                 class="hidden-img"
               />
             </div>
@@ -35,6 +37,27 @@
             </p>
           </div>
         </carousel>
+      </client-only> -->
+      <client-only>
+        <Flickity :options="flickityOptions">
+          <div class="slide flex space-x-5 px-4 py-4" v-for="item in 4">
+            <div class="col-span-2">
+              <el-avatar
+                :size="100"
+                src="https://bookland.vn/images/bds/1/files/khach-hang-bookland(1).jpg"
+              ></el-avatar>
+            </div>
+            <div class="col-span-6">
+              <p>Anh Vũ Ngọc Hải</p>
+              <p class="text-sm text-slate-500 mt-4">
+                Tôi rất hài lòng với NhanbinhLand. Đặc biệt là đội ngũ tư vấn
+                chuyên nghiệp và nhiệt tình. Nhờ có NhanbinhLand mà tôi đang có
+                nguồn thu nhập chính từ BĐS nghỉ dưỡng mà trước đó tôi hoàn toàn
+                chưa biết gì về cơ hội đầu tư như vậy.
+              </p>
+            </div>
+          </div>
+        </Flickity>
       </client-only>
       <el-button class="text-lg mt-10"
         >TÌM HIỂU THÊM VỀ NHAN BINH LAND</el-button
