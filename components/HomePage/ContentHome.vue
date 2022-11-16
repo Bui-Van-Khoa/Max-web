@@ -7,7 +7,7 @@
       <p class="text-center text-2xl text-slate-500 pb-12">
         CUNG CẤP GIẢI PHÁP BẤT ĐỘNG SẢN TOÀN DIỆN CHO KHÁCH HÀNG
       </p>
-      <client-only>
+      <!-- <client-only>
         <carousel
           :nav="false"
           :loop="true"
@@ -37,7 +37,7 @@
             </p>
           </div>
         </carousel>
-      </client-only>
+      </client-only> -->
       <el-button class="text-lg mt-10"
         >TÌM HIỂU THÊM VỀ NHAN BINH LAND</el-button
       >
@@ -84,7 +84,7 @@
         <p class="text-center text-white text-4xl uppercase py-8">
           BĐS MỞ BÁN TẠI NHAN BINH LAND
         </p>
-        <!-- <client-only>
+        <client-only>
           <Flickity
             pageDots:false
             :options="flickityOptions"
@@ -140,7 +140,7 @@
               </div>
             </div>
           </Flickity>
-        </client-only> -->
+        </client-only>
       </div>
     </section>
 
