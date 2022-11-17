@@ -868,6 +868,13 @@ export default defineComponent({
       @media screen and (max-width: 979px) {
         width: 25%;
       }
+      @media screen and (max-width: 375px) {
+        width: 50%;
+      }
+      img {
+        width: 126px;
+        height: 88px;
+      }
     }
   }
 }
