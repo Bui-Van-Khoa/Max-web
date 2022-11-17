@@ -17,14 +17,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    // script: [
-    //   // ...
-    //   {
-    //     hid: "tawk.to",
-    //     src: "https://embed.tawk.to/5edf699a9e5f694422903412/default",
-    //     defer: true,
-    //   },
-    // ],
+   
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -56,6 +49,7 @@ export default {
     "@nuxt/postcss8",
     "@nuxt/typescript-build",
     "@pinia/nuxt",
+    '@nuxt/image',
   ],
 
   apollo: {

@@ -7,42 +7,13 @@
       <p class="text-center text-2xl text-slate-500 pb-12">
         CUNG CẤP GIẢI PHÁP BẤT ĐỘNG SẢN TOÀN DIỆN CHO KHÁCH HÀNG
       </p>
-      <!-- <client-only>
-        <carousel
-          :nav="false"
-          :loop="true"
-          :responsive="{
-            0: { items: 1, nav: false },
-            450: { items: 2, nav: false },
-            850: { items: 3, nav: false },
-            1024: { items: 4, nav: false },
-            1240: { items: 5, nav: false },
-          }"
-        >
-          <div v-for="(item, index) in Max_web_service">
-            <div class="hover-change-image">
-              <img :src="require('@/assets/images/service/icon1-white.png')" />
-              <img
-                :src="require('@/assets/images/service/1.png')"
-                class="hidden-img"
-              />
-            </div>
-            <h3 class="text-emerald-700 pb-4 pt-12 text-center font-bold">
-              {{ item.title }}
-            </h3>
-            <p class="text-justify px-2 text-slate-500 text-sm">
-              {{ item.description }}
-            </p>
-          </div>
-        </carousel>
-      </client-only> -->
 
       <client-only>
         <Flickity :options="flickityOptions1">
           <div
             v-for="(item, index) in Max_web_service"
             :key="index"
-            class="partner__cell"
+            class="service__cell"
           >
             <div class="hover-change-image">
               <img
@@ -391,24 +362,22 @@
       <p class="text-center text-emerald-700 text-4xl uppercase font-bold py-8">
         ĐỐI TÁC CỦA NHAN BINH LAND
       </p>
-      <div>
-        <client-only>
-          <Flickity :options="flickityOptions1">
-            <div
-              v-for="item in listPartner"
-              :key="item.id"
-              class="partner__cell"
-            >
-              <div class="px-2">
-                <img
-                  :src="require(`@/assets/images/partner/${item.url}`)"
-                  class="m-auto"
-                />
-              </div>
+      <client-only>
+        <Flickity :options="flickityOptions1">
+          <div
+            v-for="(item, key) in listPartner"
+            :key="key"
+            class="partner__cell"
+          >
+            <div class="px-2">
+              <img
+                :src="require(`@/assets/images/partner/${item.src}`)"
+                class="m-auto"
+              />
             </div>
-          </Flickity>
-        </client-only>
-      </div>
+          </div>
+        </Flickity>
+      </client-only>
     </section>
   </div>
 </template>
@@ -443,11 +412,89 @@ export default defineComponent({
       wrapAround: true,
       cellAlign: "left",
       draggable: true,
-      autoPlay: false,
+      autoPlay: true,
     };
 
     const urlInitial = ref("https://www.youtube.com/watch?v=G2z1JJ78DK0");
     const currentIdVideo = ref(1);
+
+    const listPartner = [
+      {
+        id: 1,
+        src: "home-001.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 2,
+        src: "home-002.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 3,
+        src: "home-003.jpg",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 4,
+        src: "cong-ty-cp-beegreen.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 5,
+        src: "home-005.jpg",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 6,
+        src: "home-006.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 7,
+        src: "home-007.jpg",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 8,
+        src: "home-008.jpg",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 9,
+        src: "home-009.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 10,
+        src: "home-10.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 11,
+        src: "home-11.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 12,
+        src: "home-12.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 13,
+        src: "home-13.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 14,
+        src: "home-14.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+      {
+        id: 15,
+        src: "home-15.png",
+        url: "https://bds107.maxwebsite.vn/wp-content/uploads/2019/09/home-001.png",
+      },
+    ];
 
     const videoList = [
       {
@@ -526,88 +573,6 @@ export default defineComponent({
           " Hỗ trợ 24/7 khách hàng giải quyết mọi vấn đề về thủ tục mua bán, vay vốn ngân hàng… từ khi ký hợp đồng mua nhà đến khi khách hàng nhận nhà.",
       },
     ];
-
-    const listPartner = [
-      {
-        id: 1,
-        url: "home-001.png",
-      },
-      {
-        id: 2,
-        url: "home-002.png",
-      },
-      {
-        id: 3,
-        url: "home-003.jpg",
-      },
-      {
-        id: 4,
-        url: "cong-ty-cp-beegreen.png",
-      },
-      {
-        id: 5,
-        url: "home-005.jpg",
-      },
-      {
-        id: 6,
-        url: "home-006.png",
-      },
-      {
-        id: 7,
-        url: "home-007.jpg",
-      },
-      {
-        id: 8,
-        url: "home-008.jpg",
-      },
-      {
-        id: 9,
-        url: "home-009.png",
-      },
-      {
-        id: 10,
-        url: "home-10.png",
-      },
-      {
-        id: 11,
-        url: "home-11.png",
-      },
-      {
-        id: 12,
-        url: "home-12.png",
-      },
-      {
-        id: 13,
-        url: "home-13.png",
-      },
-      {
-        id: 14,
-        url: "home-14.png",
-      },
-      {
-        id: 15,
-        url: "home-15.png",
-      },
-    ];
-
-    const form = {
-      name: "",
-    };
-
-    const options = [
-      {
-        value: "Option1",
-        label: "Option1",
-      },
-    ];
-
-    const changeUrl = (url, id) => {
-      urlInitial.value = url;
-      currentIdVideo.value = id;
-    };
-
-    watch(urlInitial, () => {});
-
     const Max_web_service = [
       {
         id: 1,
@@ -651,6 +616,24 @@ export default defineComponent({
       },
     ];
 
+    const form = {
+      name: "",
+    };
+
+    const options = [
+      {
+        value: "Option1",
+        label: "Option1",
+      },
+    ];
+
+    const changeUrl = (url, id) => {
+      urlInitial.value = url;
+      currentIdVideo.value = id;
+    };
+
+    watch(urlInitial, () => {});
+
     return {
       flickityOptions,
       changeUrl,
@@ -689,35 +672,38 @@ export default defineComponent({
       width: fit-content;
       margin-top: 70px;
     }
-  }
-  .owl-carousel {
-    .owl-stage-outer {
-      .owl-item {
-        .hover-change-image {
-          border: 1px solid #edab21;
-          width: 170px;
-          height: 170px;
-          border-radius: 50%;
-          position: relative;
-          cursor: pointer;
+
+    .service__cell {
+      @media screen and (min-width: 980px) {
+        width: 25%;
+      }
+      @media screen and (max-width: 979px) {
+        width: 50%;
+      }
+      .hover-change-image {
+        border: 1px solid #edab21;
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        margin: auto;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
           margin: auto;
-          img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            width: 55px;
-            height: 70px;
-          }
+          width: 55px;
+          height: 70px;
         }
-        .hover-change-image:hover {
-          border: none;
-          background-color: #edab21;
-          .hidden-img {
-            display: none;
-          }
+      }
+      .hover-change-image:hover {
+        border: none;
+        background-color: #edab21;
+        .hidden-img {
+          display: none;
         }
       }
     }
